@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes routePulseHigh {
+  0%, 100% {
+    opacity: 0.22;
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.35));
+  }
+  50% {
+    opacity: 0.82;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.9));
+  }
+}
+
+@keyframes routePulseModerate {
+  0%, 100% {
+    opacity: 0.18;
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.3));
+  }
+  50% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.75));
+  }
+}
+
+@keyframes routePulseLow {
+  0%, 100% {
+    opacity: 0.14;
+    filter: drop-shadow(0 0 1px rgba(74, 222, 128, 0.25));
+  }
+  50% {
+    opacity: 0.48;
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.6));
+  }
+}
+
+.route-congestion-pulse-high {
+  animation: routePulseHigh 1.05s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.route-congestion-pulse-moderate {
+  animation: routePulseModerate 1.85s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.route-congestion-pulse-low {
+  animation: routePulseLow 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-congestion-pulse-high,
+  .route-congestion-pulse-moderate,
+  .route-congestion-pulse-low {
+    animation: none;
+  }
+}
